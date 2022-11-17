@@ -16,12 +16,13 @@ const eqArrays = function(actual, expected) {
 };
 assertEqual(eqArrays([args[0]], [args[1]]), true);
 */
+
 const without = function(source, itemsToRemove) {
   let results = [];
-  for (let i of source) {
-    for (let x = 0; x < itemsToRemove.length; x++) {
-      if (i === itemsToRemove[x]) {break;}
-      if (i !== itemsToRemove[x] && x + 1 === itemsToRemove.length) {
+  for (let i of source) { // simple loop for the source
+    for (let x = 0; x < itemsToRemove.length; x++) {// nested loop to see if itemsToRemove matches
+      if (i === itemsToRemove[x]) {break;}// ends the nested loop and goes to the next source element if it gets a match
+      if (i !== itemsToRemove[x] && x + 1 === itemsToRemove.length) { //if it is the last loop && it doesn't match it will push it out
         results.push(i);
       }
     }
