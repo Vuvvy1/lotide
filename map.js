@@ -1,4 +1,17 @@
-const args = process.argv.slice(2);
+const expected = [ 'g', 'c', 't', 'm', 't' ];
+
+let words = ["ground", "control", "to", "major", "tom"];
+
+const map = (array, callback) => {
+  const results = [];
+  for (let item of array) {
+    results.push(callback(item));
+  }
+  return results;
+};
+const results1 = map(words, word => word[0]);
+console.log(results1);
+
 
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
@@ -13,5 +26,4 @@ const eqArrays = function(actual, expected) {
   }
   return true;
 };
-assertEqual(eqArrays(actual, expected), true);
-
+assertEqual(eqArrays(results1, expected), true);
