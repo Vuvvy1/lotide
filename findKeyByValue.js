@@ -5,12 +5,13 @@ const assertEqual = function(actual, expected) {
     console.log(`🛑🛑🛑Assertion Failed: ${actual} !== ${expected}`);
   }
 };
-const findKeyByValue = function(showsObject, genre) {
-  const shows = Object.keys(showsObject);
-  //console.log(shows)
-  for(let genreKey of shows){
-    if (showsObject[genreKey] === genre) {
-      return genreKey;
+const findKeyByValue = function(showsObject, genrecheck) {
+  const genres = Object.keys(showsObject);
+  console.log(genres)
+  for(let genre of genres){
+    console.log(genre)
+    if (showsObject[genre] === genrecheck) {
+      return genre;
     }
   }
 };

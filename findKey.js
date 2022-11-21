@@ -6,10 +6,10 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-const findKey = function(objectlist, check) {
-  const names = Object.keys(objectlist);
+const findKey = (objectList, check) =>{
+  const names = Object.keys(objectList);
   for (let name of names) {
-    if (check(objectlist[name])) {
+    if (check(objectList[name])) {
       return name;
     }
   }
