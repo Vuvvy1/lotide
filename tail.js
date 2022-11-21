@@ -1,9 +1,9 @@
 
 const tail = function(arr) {
-  output = [];
-  for (let i = 1; i < arr.length; i++) {
-    output += arr[i];
+  if (arr.length > 1) {
+    return arr.slice(1);
+  } else {
+    return [];
   }
-  return output;
 };
 module.exports = tail;
